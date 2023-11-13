@@ -157,6 +157,21 @@ class BinarySearchTree {
 
   dfsPreOrder() {
 
+    const outputArr = [];
+
+    function traverse(node){
+
+      outputArr.push(node.val);
+
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
+
+    }
+
+    traverse(this.root);
+
+    return outputArr
+
   }
 
   /** dfsInOrder(): Traverse the array using in-order DFS.
