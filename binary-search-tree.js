@@ -29,25 +29,17 @@ class BinarySearchTree {
 
     while(currentNode) {
 
-      if(currentNode.val > newNode.val) {
+      if(currentNode.val > newNode.val && !currentNode.left) {
 
-        if(!currentNode.left){
-
-          currentNode.left = newNode
-          return this
-
-        }
+        currentNode.left = newNode
+        return this
 
       }
 
-      if(currentNode.val < newNode.val) {
+      if(currentNode.val < newNode.val && !currentNode.right) {
 
-        if(!currentNode.right) {
-
-          currentNode.right = newNode
-          return this
-
-        }
+        currentNode.right = newNode
+        return this
 
       }
 
