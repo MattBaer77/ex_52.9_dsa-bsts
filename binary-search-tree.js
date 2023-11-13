@@ -16,6 +16,54 @@ class BinarySearchTree {
 
   insert(val) {
 
+    const newNode = new Node(val)
+
+    if (!this.root){
+
+      this.root = newNode
+      return this
+
+    }
+
+    let currentNode = this.root
+
+    while(currentNode) {
+
+      if(currentNode.val > newNode.val) {
+
+        if(!currentNode.left){
+
+          currentNode.left = newNode
+          return this
+
+        }
+
+      }
+
+      if(currentNode.val < newNode.val) {
+
+        if(!currentNode.right) {
+
+          currentNode.right = newNode
+          return this
+
+        }
+
+      }
+
+      // Switching currentNode conditionally
+      if(currentNode.val > newNode.val){
+
+        currentNode = currentNode.left
+
+      } else {
+
+        currentNode = currentNode.right
+
+      }
+
+    }
+
   }
 
   /** insertRecursively(val): insert a new node into the BST with value val.
