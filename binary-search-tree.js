@@ -225,6 +225,27 @@ class BinarySearchTree {
 
   bfs() {
 
+    const visited = []
+    let toVisitQueue = [this.root]
+
+    while (toVisitQueue.length) {
+
+      let currentNode = toVisitQueue.shift()
+
+      visited.push(currentNode.val)
+
+      if(currentNode.left){
+        toVisitQueue.push(currentNode.left)
+      }
+
+      if(currentNode.right){
+        toVisitQueue.push(currentNode.right)
+      }
+
+    }
+    
+    return visited
+
   }
 
   /** Further Study!
