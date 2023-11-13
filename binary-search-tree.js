@@ -109,6 +109,20 @@ class BinarySearchTree {
 
   find(val) {
 
+    let currentNode = this.root;
+
+    while(currentNode) {
+
+      if (currentNode.val === val){
+        return currentNode
+      }
+
+      currentNode = val < currentNode.val
+                    ? currentNode.left
+                    :currentNode.right
+
+    }
+
   }
 
   /** findRecursively(val): search the tree for a node with value val.
